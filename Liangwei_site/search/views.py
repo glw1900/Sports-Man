@@ -32,6 +32,15 @@ def advanced_search(request):
         adress = to_golocation(location)
         lat = adress['lat']
         lng = adress['lng']
-    return HttpResponse("yes")
-
-    return render(request,'search/advanced_search.html')
+        q = ES_query()
+        hits = q.q_nl(query,(lat,lng))
+        output = []
+        for i in range(min(10,len(hits['hits']['hits']))):
+            res = hits['hits']['hits']
+            temp = 'rank: ' + str(i+1)
+            stadium = res[i]["_source"]
+            temp = temp + '     name: ' + stadium['name']
+            output.append(temp)
+        return render(request,'search/index.html', {'output':output})
+    else:
+        return render(request,'search/advanced_search.html')

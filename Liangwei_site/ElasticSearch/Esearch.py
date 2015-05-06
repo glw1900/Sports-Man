@@ -40,14 +40,12 @@ class ES_query(object):
         self.es.indices.refresh(index = "i_sportsman")
         return bulk_load
 
-    def q_mwf(self,address,type,lat,lon):
+    def q_mwf(self,type,lat,lon):
         query_body = {"query" : {
             "filtered" : {
                 "query": {
                         "bool" : {
-                            "must": [{"match": {"address": {
-                                "query":address, "operator": "and"}}},
-                                    {"match": {"activity_types": type}}],
+                            "must": [{"match": {"activity_types": type}}],
                             #"should": {"match": {"text" : string2} },
                             "boost" : 1.0}},
                 "filter" : {
@@ -65,12 +63,11 @@ class ES_query(object):
         self.prints(res)
         return res
 
-    def q_nl(self,string):
-        query_body = self.nlq.gen_query(string)
+    def q_nl(self,string,geolocation):
+        query_body = self.nlq.gen_query(string,geolocation)
         res = self.es.search(index = "i_sportsman", doc_type = "stadium", body = query_body,size = 10000)
         self.prints(res)
         return res
-
     #print the required results by order
     def prints(self,res):
         hits = res["hits"]["hits"]
