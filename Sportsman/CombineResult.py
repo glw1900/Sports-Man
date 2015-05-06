@@ -20,7 +20,6 @@ def add_google_places(placeiter,output,term,process_func):
     for elem in placeiter:
         query_result = google_places.text_search(
         query= elem[term])
-
         if len(query_result.places) == 0 and elem.has_key('address'):
             query_result = google_places.text_search(query= elem['address'])
         
@@ -80,11 +79,11 @@ def process_tennis(elem,result):
     result['activity_types']='tennis'
     specialized={}
     for attr in ["num_courts"]:
-        if not elem.has_key(attr) or elem[attr] == '':
+        if not elem.has_key(attr) or elem[attr] == '-':
             continue
         #print attr,elem[attr]
         specialized[attr]=int(elem[attr])
-
+    result['name']=elem['court']
     result['address'] = elem['address']
     result['international_phone_number']=elem['tel'].replace('Phone ','+1 ')
     result['local_phone_number']=re.sub(r'^(\d{3})-',r'(\1) ',elem['tel'].replace('Phone ',''))

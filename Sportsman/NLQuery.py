@@ -1,6 +1,11 @@
 
 
 from pyparsing import *
+from googleplaces import GooglePlaces
+
+YOUR_API_KEY = 'AIzaSyCTqay66rwdaS5CdL9C2BArgrh5Xxwprfs'
+
+google_places = GooglePlaces(YOUR_API_KEY)
 # populate ingredients->recipes "database"
 
 # classes to be constructed at parse time, from intermediate ParseResults
@@ -74,12 +79,20 @@ class QueryString():
         self.inexpr = t.inexpr
         self.withexpr = t.withexpr
         self.rangeexpr= t.rangeexpr
+        self.geolocation = (42.3688784,-71.2467742)
+        
 
     def get_current_location(self):
-        return (42.3688784,-71.2467742)
+        return self.geolocation
 
     def query_location(self,qs):
-        return (1,2)
+        query_result = google_places.text_search(location=qs)
+        if len(query_result.places) == 0:
+            return self.get_current_location()
+        else:
+            place=query_result.places[0]
+            return (place.geolocation['lat'],place.geolocation['lng'])
+
 
     def gen_range_expr(self):
         key,expr = self.rangeexpr[0],self.rangeexpr[1:]
@@ -112,7 +125,8 @@ class QueryString():
 
     def map_sports(self,sports):
         return 'ski'
-    def gen_query(self):
+    def gen_query(self,geolocation):
+        self.geolocation=geolocation
         filter = self.rangeexpr or self.withexpr
         sport=self.map_sports(self.sports)
         queries=[{"match": {"activity_types": sport}}]
@@ -171,10 +185,10 @@ class NLQuery(object):
         queryString.addParseAction(QueryString)
         self.query_str=queryString
 
-    def gen_query(self,string):
+    def gen_query(self,string,geolocation):
         try:
             evalStack = (self.query_str + stringEnd).parseString(string)
-            return evalStack[0].gen_query()
+            return evalStack[0].gen_query(geolocation)
         except ParseException, pe:
             return "Invalid search string"
 

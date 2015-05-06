@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>5f32c4d5-4e8a-4aaf-ad10-fb7dbef50006</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Esearch.py</StartupFile>
+    <StartupFile>CombineResult.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

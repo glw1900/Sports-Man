@@ -65,8 +65,8 @@ class ES_query(object):
         self.prints(res)
         return res
 
-    def q_nl(self,string):
-        query_body = self.nlq.gen_query(string)
+    def q_nl(self,string,geolocation):
+        query_body = self.nlq.gen_query(string,geolocation)
         res = self.es.search(index = "i_sportsman", doc_type = "stadium", body = query_body,size = 10000)
         self.prints(res)
         return res
