@@ -30,6 +30,7 @@
     <Folder Include="crawlers\" />
     <Folder Include="crawlers\crawlers\" />
     <Folder Include="crawlers\crawlers\spiders\" />
+    <Folder Include="extraction\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CombineResult.py">
@@ -39,11 +40,18 @@
     <Compile Include="crawlers\crawlers\pipelines.py" />
     <Compile Include="crawlers\crawlers\settings.py" />
     <Compile Include="crawlers\crawlers\spiders\onthesnow.py" />
+    <Compile Include="crawlers\crawlers\spiders\rock_climbing.py" />
+    <Compile Include="crawlers\crawlers\spiders\scrapy_cities.py" />
+    <Compile Include="crawlers\crawlers\spiders\scrapy_states.py" />
+    <Compile Include="crawlers\crawlers\spiders\scrapy_tennis.py" />
     <Compile Include="crawlers\crawlers\spiders\swimmersguide.py" />
     <Compile Include="crawlers\crawlers\spiders\__init__.py" />
     <Compile Include="crawlers\crawlers\__init__.py" />
     <Compile Include="Esearch.py" />
     <Compile Include="GooglePlaces.py" />
+    <Compile Include="NLQuery.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="scrapy_baseball.py" />
     <Compile Include="scrapy_tennis.py" />
     <Compile Include="yelp_search.py" />

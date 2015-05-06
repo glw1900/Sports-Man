@@ -1,0 +1,2 @@
+oauth==1.0
+httplib2==0.9
