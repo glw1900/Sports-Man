@@ -40,31 +40,26 @@ class ES_query(object):
         self.es.indices.refresh(index = "i_sportsman")
         return bulk_load
 
-    def q_mwf(self,address,type,lat,lon):
+    def q_mwf(self,string1,string2,num1,num2):
         query_body = {"query" : {
             "filtered" : {
                 "query": {
                         "bool" : {
-                            "must": [{"match": {"address": {
-                                "query":address, "operator": "and"}}},
-                                    {"match": {"activity_types": type}}],
+                            "must": [{"match": {"address": {"query":string1, "operator": "and"}}},
+                                    {"match": {"activity_types": string2}}],
                             #"should": {"match": {"text" : string2} },
                             "boost" : 1.0}},
                 "filter" : {
                     "geo_distance" : {
-                        "distance" : "100km",
+                        "distance" : "50km",
                         "geo_location" : {
-                            "lat" : lat,
-                            "lon" : lon
+                            "lat" : num1,
+                            "lon" : num2
                         }
                     }}
             }
         }}
 
-<<<<<<< Updated upstream
-=======
-        #if
->>>>>>> Stashed changes
 
         res = self.es.search(index = "i_sportsman", doc_type = "stadium", body = query_body,size = 10000)
         self.prints(res)
@@ -83,16 +78,11 @@ class ES_query(object):
             print '\n'
             print 'name: ' + hits[i]["_source"]['name']
             stadium = hits[i]["_source"]
-            print stadium
+
 
 
 if __name__ == "__main__":
     x =  ES_query()
-<<<<<<< Updated upstream
     x.q_nl('ski places with more than 100 trails within 150 miles')
     #x.bulk_loading()
     #q_addr = x.q_mwf('MA','ski',42.3688784,-71.2467742)
-=======
-    x.bulk_loading()
-    q_addr = x.q_mwf('MA','Ski',42.3688784,-71.2467742)
->>>>>>> Stashed changes

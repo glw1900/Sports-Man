@@ -1235,3 +1235,34 @@
 [2015-05-04 14:33:21,565][WARN ][cluster.routing.allocation.decider] [T-Ray] high disk watermark [10%] exceeded on [1jsX_9HBTVW4rF_OU7ffcA][T-Ray] free: 12.7gb[5.5%], shards will be relocated away from this node
 [2015-05-04 14:33:51,567][WARN ][cluster.routing.allocation.decider] [T-Ray] high disk watermark [10%] exceeded on [1jsX_9HBTVW4rF_OU7ffcA][T-Ray] free: 12.7gb[5.5%], shards will be relocated away from this node
 [2015-05-04 14:33:51,567][INFO ][cluster.routing.allocation.decider] [T-Ray] high disk watermark exceeded on one or more nodes, rerouting shards
+[2015-05-05 14:18:53,301][INFO ][node                     ] [Rune] version[1.4.4], pid[3827], build[c88f77f/2015-02-19T13:05:36Z]
+[2015-05-05 14:18:53,302][INFO ][node                     ] [Rune] initializing ...
+[2015-05-05 14:18:53,306][INFO ][plugins                  ] [Rune] loaded [], sites []
+[2015-05-05 14:18:55,603][INFO ][node                     ] [Rune] initialized
+[2015-05-05 14:18:55,603][INFO ][node                     ] [Rune] starting ...
+[2015-05-05 14:18:55,678][INFO ][transport                ] [Rune] bound_address {inet[/0:0:0:0:0:0:0:0:9301]}, publish_address {inet[/192.168.1.14:9301]}
+[2015-05-05 14:18:55,698][INFO ][discovery                ] [Rune] zhongqil/ksFy-U7vQYeLjSGusi0zsw
+[2015-05-05 14:18:58,863][INFO ][cluster.service          ] [Rune] detected_master [T-Ray][1jsX_9HBTVW4rF_OU7ffcA][ZhongqiLees-MacBook-Pro.local][inet[/192.168.1.114:9300]], added {[T-Ray][1jsX_9HBTVW4rF_OU7ffcA][ZhongqiLees-MacBook-Pro.local][inet[/192.168.1.114:9300]],}, reason: zen-disco-receive(from master [[T-Ray][1jsX_9HBTVW4rF_OU7ffcA][ZhongqiLees-MacBook-Pro.local][inet[/192.168.1.114:9300]]])
+[2015-05-05 14:18:58,881][INFO ][http                     ] [Rune] bound_address {inet[/0:0:0:0:0:0:0:0:9201]}, publish_address {inet[/192.168.1.14:9201]}
+[2015-05-05 14:18:58,881][INFO ][node                     ] [Rune] started
+[2015-05-05 14:21:10,194][INFO ][node                     ] [Slipstream] version[1.4.4], pid[3845], build[c88f77f/2015-02-19T13:05:36Z]
+[2015-05-05 14:21:10,194][INFO ][node                     ] [Slipstream] initializing ...
+[2015-05-05 14:21:10,198][INFO ][plugins                  ] [Slipstream] loaded [], sites []
+[2015-05-05 14:21:12,359][INFO ][node                     ] [Slipstream] initialized
+[2015-05-05 14:21:12,359][INFO ][node                     ] [Slipstream] starting ...
+[2015-05-05 14:21:12,415][INFO ][transport                ] [Slipstream] bound_address {inet[/0:0:0:0:0:0:0:0:9303]}, publish_address {inet[/192.168.1.14:9303]}
+[2015-05-05 14:21:12,429][INFO ][discovery                ] [Slipstream] zhongqil/BR5qd1LjSCumrLYrJFRhGA
+[2015-05-05 14:21:15,554][INFO ][cluster.service          ] [Slipstream] detected_master [T-Ray][1jsX_9HBTVW4rF_OU7ffcA][ZhongqiLees-MacBook-Pro.local][inet[/192.168.1.114:9300]], added {[T-Ray][1jsX_9HBTVW4rF_OU7ffcA][ZhongqiLees-MacBook-Pro.local][inet[/192.168.1.114:9300]],}, reason: zen-disco-receive(from master [[T-Ray][1jsX_9HBTVW4rF_OU7ffcA][ZhongqiLees-MacBook-Pro.local][inet[/192.168.1.114:9300]]])
+[2015-05-05 14:21:15,577][INFO ][http                     ] [Slipstream] bound_address {inet[/0:0:0:0:0:0:0:0:9203]}, publish_address {inet[/192.168.1.14:9203]}
+[2015-05-05 14:21:15,577][INFO ][node                     ] [Slipstream] started
+[2015-05-05 15:03:33,791][INFO ][node                     ] [Slipstream] stopping ...
+[2015-05-05 15:03:33,791][INFO ][node                     ] [Rune] stopping ...
+[2015-05-05 15:03:33,813][WARN ][discovery.zen.ping.multicast] [Slipstream] received ping response ping_response{node [[Rune][ksFy-U7vQYeLjSGusi0zsw][lijishandeMacBook-Pro.local][inet[/192.168.1.14:9301]]], id[7], master [[T-Ray][1jsX_9HBTVW4rF_OU7ffcA][ZhongqiLees-MacBook-Pro.local][inet[/192.168.1.114:9300]]], hasJoinedOnce [true], cluster_name[zhongqil]} with no matching id [1]
+[2015-05-05 15:03:33,863][WARN ][discovery.zen.ping.multicast] [Slipstream] received ping response ping_response{node [[Rune][ksFy-U7vQYeLjSGusi0zsw][lijishandeMacBook-Pro.local][inet[/192.168.1.14:9301]]], id[9], master [[T-Ray][1jsX_9HBTVW4rF_OU7ffcA][ZhongqiLees-MacBook-Pro.local][inet[/192.168.1.114:9300]]], hasJoinedOnce [true], cluster_name[zhongqil]} with no matching id [1]
+[2015-05-05 15:03:33,864][WARN ][discovery.zen.ping.multicast] [Slipstream] received ping response ping_response{node [[Rune][ksFy-U7vQYeLjSGusi0zsw][lijishandeMacBook-Pro.local][inet[/192.168.1.14:9301]]], id[8], master [[T-Ray][1jsX_9HBTVW4rF_OU7ffcA][ZhongqiLees-MacBook-Pro.local][inet[/192.168.1.114:9300]]], hasJoinedOnce [true], cluster_name[zhongqil]} with no matching id [1]
+[2015-05-05 15:03:33,978][INFO ][node                     ] [Rune] stopped
+[2015-05-05 15:03:33,978][INFO ][node                     ] [Rune] closing ...
+[2015-05-05 15:03:33,983][INFO ][node                     ] [Rune] closed
+[2015-05-05 15:03:34,294][INFO ][node                     ] [Slipstream] stopped
+[2015-05-05 15:03:34,294][INFO ][node                     ] [Slipstream] closing ...
+[2015-05-05 15:03:34,298][INFO ][node                     ] [Slipstream] closed
