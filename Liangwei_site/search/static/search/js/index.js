@@ -1,12 +1,6 @@
-<<<<<<< HEAD
  var csrftoken = $.cookie('csrftoken');
  var selectedValue = "";
 
-||||||| merged common ancestors
-=======
- var csrftoken = $.cookie('csrftoken');
-
->>>>>>> origin/master
  function setCountry(code){
         if(code || code==''){
             var text = jQuery('a[cunt_code="'+code+'"]').html();
@@ -67,19 +61,11 @@ function sendPost(sports_type){
         });
 
         $(".dropdown dd ul li a").click(function() {
-<<<<<<< HEAD
             //console.log($(".dropdown dd ul li").val();
             //alert($(this).text());
             //sendPost($(this).text());
             var elem = document.getElementById("selectedValue");
             elem.value = $(this).text();
-||||||| merged common ancestors
-            //console.log($(this).html())
-=======
-            //console.log($(".dropdown dd ul li").val();
-            //alert($(this).text());
-            sendPost($(this).text());
->>>>>>> origin/master
             var text = $(this).html();
             $(".dropdown dt a span").html(text);
             $(".dropdown dd ul").hide();

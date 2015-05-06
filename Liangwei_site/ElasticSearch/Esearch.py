@@ -48,7 +48,7 @@ class ES_query(object):
                             "boost" : 1.0}},
                 "filter" : {
                     "geo_distance" : {
-                        "distance" : "50km",
+                        "distance" : "500km",
                         "geo_location" : {
                             "lat" : num1,
                             "lon" : num2

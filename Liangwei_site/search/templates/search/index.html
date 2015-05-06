@@ -73,21 +73,11 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
   						</dd>
 				</dl>
 			</div>
-<<<<<<< HEAD
+            <br><br><br><br><br><br>
             <input type="hidden" id="selectedValue" name="selectedType">
 			{% if searchText %}
 			<input type="text" name="Court_Name" value="{{ searchText }}" required>
 			{% else %}
-||||||| merged common ancestors
-		<form class="form-wrapper cf" action= "{% url 'search_result' %}"  method="POST">
-			{% csrf_token %}
-=======
-		<form class="form-wrapper cf" action="#three-column"  method="POST">
-			{% csrf_token %}
-			{% if searchText %}
-			<input type="text" name="Court_Name" value="{{ searchText }}" required>
-			{% else %}
->>>>>>> origin/master
 			<input type="text" name="Court_Name" placeholder="Search courts name here..." required>
 			{% endif %}
 			<button type="submit" value="Submit">Search</button>
@@ -106,19 +96,10 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 			<span class="byline">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue</span>
 		</div>
 		<div class="boxA">
-<<<<<<< HEAD
 			<p>Total number of hits is {{ output|length }}<br>
 			{% for result in output %}
         	<li>{{ result }}</li><br>
     		{% endfor %}</p>
-||||||| merged common ancestors
-			<p>Phasellus pellentesque, ante nec iaculis dapibus, eros justo auctor lectus, a lobortis lorem mauris quis nunc. Praesent pellentesque facilisis elit. Class aptent taciti sociosqu ad  torquent per conubia nostra.</p>
-=======
-			<p>Total number of hits is {{ hits|length }}<br>
-			{% for result in output %}
-        	<li>{{ result }}</li><br>
-    		{% endfor %}</p>
->>>>>>> origin/master
 			<a href="#" class="button button-alt">More Info</a>
 		</div>
 		<div class="boxB">
