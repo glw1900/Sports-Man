@@ -32,6 +32,6 @@ def advanced_search(request):
         adress = to_golocation(location)
         lat = adress['lat']
         lng = adress['lng']
-
+    return HttpResponse("yes")
 
     return render(request,'search/advanced_search.html')

@@ -1,6 +1,7 @@
 __author__ = 'CassyLee'
 
 from datetime import datetime
+from NLQuery import NLQuery
 from elasticsearch import Elasticsearch
 import json
 import time
@@ -10,19 +11,20 @@ class ES_query(object):
 
     def __init__(self):
         self.es = Elasticsearch()
+        self.nlq = NLQuery()
 
 #load schema and create an index
     def create_index(self,index_name):
         with open('sportsman_schema.txt','r') as schema:
             sports_schema = json.load(schema)
-        #if self.es.indices.exists:
-        self.es.indices.delete(index=index_name)
+        if self.es.indices.exists(index_name):
+            self.es.indices.delete(index_name)
         novel_index = self.es.indices.create(index = index_name, body = sports_schema)
 
 
     #bulk load the data
     def bulk_loading(self):
-        with open('onthesnowplace.json','r') as j:
+        with open(r'onthesnowplace.json','r') as j:
             json_text = json.load(j)
         bulk_file = []
         action = { "index": { "_index": "i_sportsman", "_type": "stadium" }}
@@ -38,28 +40,36 @@ class ES_query(object):
         self.es.indices.refresh(index = "i_sportsman")
         return bulk_load
 
-    def q_mwf(self,string2,num1,num2):
+    def q_mwf(self,address,type,lat,lon):
         query_body = {"query" : {
             "filtered" : {
                 "query": {
                         "bool" : {
-                            "must": [{"match": {"activity_types": string2}}],
+                            "must": [{"match": {"address": {
+                                "query":address, "operator": "and"}}},
+                                    {"match": {"activity_types": type}}],
                             #"should": {"match": {"text" : string2} },
                             "boost" : 1.0}},
                 "filter" : {
                     "geo_distance" : {
-                        "distance" : "500km",
+                        "distance" : "100km",
                         "geo_location" : {
-                            "lat" : num1,
-                            "lon" : num2
+                            "lat" : lat,
+                            "lon" : lon
                         }
                     }}
             }
         }}
 
         res = self.es.search(index = "i_sportsman", doc_type = "stadium", body = query_body,size = 10000)
+        self.prints(res)
         return res
-        # self.prints(res)
+
+    def q_nl(self,string):
+        query_body = self.nlq.gen_query(string)
+        res = self.es.search(index = "i_sportsman", doc_type = "stadium", body = query_body,size = 10000)
+        self.prints(res)
+        return res
 
     #print the required results by order
     def prints(self,res):
@@ -67,12 +77,13 @@ class ES_query(object):
         print 'totle number of hits: ' + str(len(hits))
         for i in range(min(10,len(hits))):
             print '\n'
-            print 'rank: ' + str(i+1)
+            print 'name: ' + hits[i]["_source"]['name']
             stadium = hits[i]["_source"]
-
+            print stadium
 
 
 if __name__ == "__main__":
     x =  ES_query()
+    x.q_nl('ski places with more than 100 trails within 150 miles')
     x.bulk_loading()
-    print x.q_mwf('ski',42.3744753,-71.2492378)
+    q_addr = x.q_mwf('MA','Ski',42.3688784,-71.2467742)

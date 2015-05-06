@@ -83,6 +83,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 			<button type="submit" value="Submit">Search</button>
 		</form>
         <form action="{% url 'advanced_search'%}"  method="POST">
+            {% csrf_token %}
             <input type="hidden" name="Advanced" value="advanced">
             <button type="submit" value="Submit">Advanced</button>
         </form>
