@@ -4,7 +4,7 @@ Design by TEMPLATED
 http://templated.co
 Released for free under the Creative Commons Attribution License
 
-Name       : FirstBase 
+Name       : FirstBase
 Description: A two-column, fixed-width design with dark color scheme.
 Version    : 1.0
 Released   : 20140404
@@ -59,33 +59,22 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 			<span class="byline">Nothing Hurts More Than Sitting On A Couch</span>
 		</div>
     <form class="form-wrapper cf" action="#three-column"  method="POST">
-			{% csrf_token %}
-			 <div class="wrapper">
-				<dl id="sports-select" class="dropdown">
-					{% csrf_token %}
-  					<dt><a><span><span></span><span>Select Sports Type</span></span></a></dt>
-  						<dd>
-    						<ul style="display: none;">
-    							{% for s in sportType %}
-    							<li><a cunt_code="" href="javascript:void(0);" value="s.name"><span style="background-position:0px -1694px"></span><span>{{ s.name }}</span><span></span></a></li>
-    							{% endfor %}
-    						</ul>
-  						</dd>
-				</dl>
-			</div>
+		{% csrf_token %}
             <br><br><br><br><br><br>
-            <input type="hidden" id="selectedValue" name="selectedType">
 			{% if searchText %}
-			<input type="text" name="Court_Name" value="{{ searchText }}" required>
+			<input type="text" name="location" value="{{ searchText }}" required>
 			{% else %}
-			<input type="text" name="Court_Name" placeholder="Enter your location here..." required>
+			<input type="text" name="location" placeholder="Enter your location here..." required>
 			{% endif %}
-			<button type="submit" value="Submit">Search</button>
-		</form>
-        <form action="{% url 'advanced_search'%}"  method="POST">
-            <input type="hidden" name="Advanced" value="advanced">
-            <button type="submit" value="Submit">Advanced</button>
-        </form>
+
+            {%if queryText %}
+			<input type="text" name="query" value="{{ queryText }}" required>
+			{% else %}
+			<input type="text" name="query" placeholder="Enter your query here..." required>
+			{% endif %}
+
+			<button type="submit" value="Submit">Advanced Search</button>
+	</form>
 <script src='http://codepen.io/assets/libs/fullpage/jquery.js'></script>
 <script src="{% static 'search/js/jquery.cookie.js' %}"></script>
 <script src="{% static 'search/js/index.js' %}"></script>
@@ -94,7 +83,7 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
 </div>
 <div id="wrapper">
 	<div id="three-column" class="container">
-    
+
 		<div class="title">
 			<h2>Feugiat lorem ipsum dolor sed veroeros</h2>
 			<span class="byline">Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue</span>

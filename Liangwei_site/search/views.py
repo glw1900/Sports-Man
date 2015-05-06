@@ -1,10 +1,7 @@
-from django.http import *
-from django.http import HttpResponse
-from django.template import RequestContext
 from ElasticSearch.Esearch import ES_query
+from django.http import HttpResponse
 from django.shortcuts import render
 from .models import SportType
-from django.shortcuts import render_to_response
 from search.toGolocation import to_golocation
 
 def index(request):
@@ -28,10 +25,13 @@ def index(request):
     else:
         return render(request,'search/index.html', {'sportType':sportType})
 
+def advanced_search(request):
+    if 'query' in request.POST and 'location' in request.POST:
+        query = request.POST['query']
+        location = request.POST['location']
+        adress = to_golocation(location)
+        lat = adress['lat']
+        lng = adress['lng']
 
 
-
-
-
-
-
+    return render(request,'search/advanced_search.html')
