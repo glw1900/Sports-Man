@@ -31,10 +31,11 @@ class TennisCourtSpider(Spider):
 		fo.close()
 
 	def start_requests(self):
-		self.read_cities()
+		#self.read_cities()
 		for city in self.cities['cities']:
 			yield scrapy.Request('http://www.tennisround.com/tennis-courts/' + city, self.parse)
 
+	
 	def parse(self, response):
 		courts = response.xpath("//div[@class='name']//a/text()")
 		addresses = response.xpath("//div[@class='court-address']/text()")

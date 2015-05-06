@@ -61,11 +61,6 @@ class ES_query(object):
             }
         }}
 
-<<<<<<< Updated upstream
-=======
-        #if
->>>>>>> Stashed changes
-
         res = self.es.search(index = "i_sportsman", doc_type = "stadium", body = query_body,size = 10000)
         self.prints(res)
         return res
@@ -88,11 +83,6 @@ class ES_query(object):
 
 if __name__ == "__main__":
     x =  ES_query()
-<<<<<<< Updated upstream
     x.q_nl('ski places with more than 100 trails within 150 miles')
-    #x.bulk_loading()
-    #q_addr = x.q_mwf('MA','ski',42.3688784,-71.2467742)
-=======
     x.bulk_loading()
     q_addr = x.q_mwf('MA','Ski',42.3688784,-71.2467742)
->>>>>>> Stashed changes
