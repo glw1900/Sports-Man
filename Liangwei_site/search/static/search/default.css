@@ -258,6 +258,16 @@
 		float: right;
 	}
 
+/*********************************************************************************/
+/* 2-column                                                                      */
+/*********************************************************************************/
+
+    .onebox
+	{
+		width: 85%;
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+	}
 	
 /*********************************************************************************/
 /* Heading Titles                                                                */
@@ -665,6 +675,385 @@
     }
 
 /*********************************************************************************/
+/* searchbar for advanced search                                                                        */
+/*********************************************************************************/
+
+    /*-------------------------------------*/
+
+    .cf:before, .cf:after{
+      content:"";
+      display:table;
+    }
+
+    .cf:after{
+      clear:both;
+    }
+
+    .cf{
+      zoom:1;
+    }
+
+    /*-------------------------------------*/
+
+    .form-wrapper2 {
+        width: 450px;
+        padding: 15px;
+        margin: 150px auto 50px auto;
+        background: #444;
+        background: rgba(0,0,0,.2);
+        -moz-border-radius: 10px;
+        -webkit-border-radius: 10px;
+        border-radius: 10px;
+        -moz-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+        -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+        box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+    }
+
+    .form-wrapper2 input {
+        width: 330px;
+        height: 20px;
+        padding: 10px 5px;
+        float: left;
+        font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+        border: 0;
+        background: #eee;
+        -moz-border-radius: 3px 0 0 3px;
+        -webkit-border-radius: 3px 0 0 3px;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .form-wrapper2 input:focus {
+        outline: 0;
+        background: #fff;
+        -moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+        -webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+        box-shadow: 0 0 2px rgba(0,0,0,.8) inset;
+    }
+
+    .form-wrapper2 input::-webkit-input-placeholder {
+       color: #999;
+       font-weight: normal;
+       font-style: italic;
+    }
+
+    .form-wrapper2 input:-moz-placeholder {
+        color: #999;
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    .form-wrapper2 input:-ms-input-placeholder {
+        color: #999;
+        font-weight: normal;
+        font-style: italic;
+    }
+
+    .form-wrapper2 button {
+		overflow: visible;
+        position: relative;
+        float: right;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        height: 40px;
+        width: 110px;
+        font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+        color: #fff;
+        text-transform: uppercase;
+        background: #008000;
+        -moz-border-radius: 0 3px 3px 0;
+        -webkit-border-radius: 0 3px 3px 0;
+        border-radius: 0 3px 3px 0;
+        text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+    }
+
+    .form-wrapper2 button:hover{
+        background: #00FF00;
+    }
+
+    .form-wrapper2 button:active,
+    /*.form-wrapper2 button:focus{*/
+        /*background: #c42f2f;*/
+    /*}*/
+
+    /*.form-wrapper2 button:before {*/
+        /*content: '';*/
+        /*position: absolute;*/
+        /*border-width: 8px 8px 8px 0;*/
+        /*border-style: solid solid solid none;*/
+        /*border-color: transparent #d83c3c transparent;*/
+        /*top: 12px;*/
+        /*left: -6px;*/
+    /*}*/
+
+    /*.form-wrapper2 button:hover:before{*/
+        /*border-right-color: #e54040;*/
+    /*}*/
+
+    /*.form-wrapper2 button:focus:before{*/
+        /*border-right-color: #c42f2f;*/
+    /*}*/
+
+    /*.form-wrapper2 button::-moz-focus-inner {*/
+        /*border: 0;*/
+        /*padding: 0;*/
+    /*}*/
+
+/*********************************************************************************/
+/* searchbar for that button                                                      */
+/*********************************************************************************/
+
+    /*-------------------------------------*/
+
+    .cf:before, .cf:after{
+      content:"";
+      display:table;
+    }
+
+    .cf:after{
+      clear:both;
+    }
+
+    .cf{
+      zoom:1;
+    }
+
+    /*-------------------------------------*/
+
+    /*.form-wrapper3 {*/
+        /*width: 450px;*/
+        /*padding: 15px;*/
+        /*margin: 150px auto 50px auto;*/
+        /*background: #444;*/
+        /*background: rgba(0,0,0,.2);*/
+        /*-moz-border-radius: 10px;*/
+        /*-webkit-border-radius: 10px;*/
+        /*border-radius: 10px;*/
+        /*-moz-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);*/
+        /*-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);*/
+        /*box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);*/
+    /*}*/
+
+    /*.form-wrapper3 input {*/
+        /*width: 330px;*/
+        /*height: 20px;*/
+        /*padding: 10px 5px;*/
+        /*float: left;*/
+        /*font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';*/
+        /*border: 0;*/
+        /*background: #eee;*/
+        /*-moz-border-radius: 3px 0 0 3px;*/
+        /*-webkit-border-radius: 3px 0 0 3px;*/
+        /*border-radius: 3px 0 0 3px;*/
+    /*}*/
+
+    /*.form-wrapper3 input:focus {*/
+        /*outline: 0;*/
+        /*background: #fff;*/
+        /*-moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;*/
+        /*-webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;*/
+        /*box-shadow: 0 0 2px rgba(0,0,0,.8) inset;*/
+    /*}*/
+
+    /*.form-wrapper3 input::-webkit-input-placeholder {*/
+       /*color: #999;*/
+       /*font-weight: normal;*/
+       /*font-style: italic;*/
+    /*}*/
+
+    /*.form-wrapper3 input:-moz-placeholder {*/
+        /*color: #999;*/
+        /*font-weight: normal;*/
+        /*font-style: italic;*/
+    /*}*/
+
+    /*.form-wrapper3 input:-ms-input-placeholder {*/
+        /*color: #999;*/
+        /*font-weight: normal;*/
+        /*font-style: italic;*/
+    /*}*/
+
+    .form-wrapper3 button {
+		overflow: visible;
+        position: absolute;
+        left: 50%;
+        float: right;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        height: 40px;
+        width: 110px;
+        font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+        color: #fff;
+        text-transform: uppercase;
+        background: #d83c3c;
+        -moz-border-radius: 0 3px 3px 0;
+        -webkit-border-radius: 0 3px 3px 0;
+        border-radius: 3px 3px 3px 3px;
+        text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+    }
+
+    .form-wrapper3 button:hover{
+        background: #008000;
+    }
+
+    /*.form-wrapper3 button:active,*/
+    /*.form-wrapper3 button:focus{*/
+        /*background: #c42f2f;*/
+    /*}*/
+
+    /*.form-wrapper3 button:before {*/
+        /*content: '';*/
+        /*position: absolute;*/
+        /*border-width: 8px 8px 8px 0;*/
+        /*border-style: solid solid solid none;*/
+        /*border-color: transparent #d83c3c transparent;*/
+        /*top: 12px;*/
+        /*left: -6px;*/
+    /*}*/
+
+    /*.form-wrapper3 button:hover:before{*/
+        /*border-right-color: #e54040;*/
+    /*}*/
+
+    /*.form-wrapper3 button:focus:before{*/
+        /*border-right-color: #c42f2f;*/
+    /*}*/
+
+    /*.form-wrapper3 button::-moz-focus-inner {*/
+        /*border: 0;*/
+        /*padding: 0;*/
+    /*}*/
+
+    /*********************************************************************************/
+/* searchbar for that button                                                      */
+/*********************************************************************************/
+
+    /*-------------------------------------*/
+
+    .cf:before, .cf:after{
+      content:"";
+      display:table;
+    }
+
+    .cf:after{
+      clear:both;
+    }
+
+    .cf{
+      zoom:1;
+    }
+
+    /*-------------------------------------*/
+
+    /*.form-wrapper3 {*/
+        /*width: 450px;*/
+        /*padding: 15px;*/
+        /*margin: 150px auto 50px auto;*/
+        /*background: #444;*/
+        /*background: rgba(0,0,0,.2);*/
+        /*-moz-border-radius: 10px;*/
+        /*-webkit-border-radius: 10px;*/
+        /*border-radius: 10px;*/
+        /*-moz-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);*/
+        /*-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);*/
+        /*box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);*/
+    /*}*/
+
+    /*.form-wrapper3 input {*/
+        /*width: 330px;*/
+        /*height: 20px;*/
+        /*padding: 10px 5px;*/
+        /*float: left;*/
+        /*font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';*/
+        /*border: 0;*/
+        /*background: #eee;*/
+        /*-moz-border-radius: 3px 0 0 3px;*/
+        /*-webkit-border-radius: 3px 0 0 3px;*/
+        /*border-radius: 3px 0 0 3px;*/
+    /*}*/
+
+    /*.form-wrapper3 input:focus {*/
+        /*outline: 0;*/
+        /*background: #fff;*/
+        /*-moz-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;*/
+        /*-webkit-box-shadow: 0 0 2px rgba(0,0,0,.8) inset;*/
+        /*box-shadow: 0 0 2px rgba(0,0,0,.8) inset;*/
+    /*}*/
+
+    /*.form-wrapper3 input::-webkit-input-placeholder {*/
+       /*color: #999;*/
+       /*font-weight: normal;*/
+       /*font-style: italic;*/
+    /*}*/
+
+    /*.form-wrapper3 input:-moz-placeholder {*/
+        /*color: #999;*/
+        /*font-weight: normal;*/
+        /*font-style: italic;*/
+    /*}*/
+
+    /*.form-wrapper3 input:-ms-input-placeholder {*/
+        /*color: #999;*/
+        /*font-weight: normal;*/
+        /*font-style: italic;*/
+    /*}*/
+
+    .form-wrapper4 button {
+		overflow: visible;
+        position: absolute;
+        left: 50%;
+        float: right;
+        border: 0;
+        padding: 0;
+        cursor: pointer;
+        height: 40px;
+        width: 110px;
+        font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+        color: #fff;
+        text-transform: uppercase;
+        background: #008000;
+        -moz-border-radius: 0 3px 3px 0;
+        -webkit-border-radius: 0 3px 3px 0;
+        border-radius: 3px 3px 3px 3px;
+        text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+    }
+
+    .form-wrapper4 button:hover{
+        background:  #d83c3c;
+    }
+
+    /*.form-wrapper3 button:active,*/
+    /*.form-wrapper3 button:focus{*/
+        /*background: #c42f2f;*/
+    /*}*/
+
+    /*.form-wrapper3 button:before {*/
+        /*content: '';*/
+        /*position: absolute;*/
+        /*border-width: 8px 8px 8px 0;*/
+        /*border-style: solid solid solid none;*/
+        /*border-color: transparent #d83c3c transparent;*/
+        /*top: 12px;*/
+        /*left: -6px;*/
+    /*}*/
+
+    /*.form-wrapper3 button:hover:before{*/
+        /*border-right-color: #e54040;*/
+    /*}*/
+
+    /*.form-wrapper3 button:focus:before{*/
+        /*border-right-color: #c42f2f;*/
+    /*}*/
+
+    /*.form-wrapper3 button::-moz-focus-inner {*/
+        /*border: 0;*/
+        /*padding: 0;*/
+    /*}*/
+
+
+
+/*********************************************************************************/
 /* dropdown list                                                                        */
 /*********************************************************************************/
 
@@ -857,3 +1246,123 @@ dl.dropdown dt span:nth-child(3) {
     /*position: relative;*/
     /*width: 25px;*/
 /*}*/
+
+/*********************************************************************************/
+/* table                                                                        */
+/*********************************************************************************/
+
+    a:link {
+	color: #666;
+	font-weight: bold;
+	text-decoration:none;
+}
+a:visited {
+	color: #666;
+	font-weight:bold;
+	text-decoration:none;
+}
+a:active,
+a:hover {
+	color: #bd5a35;
+	text-decoration:underline;
+}
+
+table a:link {
+	color: #666;
+	font-weight: bold;
+	text-decoration:none;
+}
+table a:visited {
+	color: #999999;
+	font-weight:bold;
+	text-decoration:none;
+}
+table a:active,
+table a:hover {
+	color: #bd5a35;
+    cursor: pointer;
+	text-decoration:underline;
+}
+table {
+	font-family:Arial, Helvetica, sans-serif;
+	color:#666;
+	font-size:12px;
+	text-shadow: 1px 1px 0px #fff;
+	background:#eaebec;
+	margin:20px;
+	border:#ccc 1px solid;
+
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+
+	-moz-box-shadow: 0 1px 2px #d1d1d1;
+	-webkit-box-shadow: 0 1px 2px #d1d1d1;
+	box-shadow: 0 1px 2px #d1d1d1;
+}
+table th {
+	padding:21px 25px 22px 25px;
+	border-top:1px solid #fafafa;
+	border-bottom:1px solid #e0e0e0;
+
+	background: #ededed;
+	background: -webkit-gradient(linear, left top, left bottom, from(#ededed), to(#ebebeb));
+	background: -moz-linear-gradient(top,  #ededed,  #ebebeb);
+}
+table th:first-child{
+	text-align: left;
+	padding-left:20px;
+}
+table tr:first-child th:first-child{
+	-moz-border-radius-topleft:3px;
+	-webkit-border-top-left-radius:3px;
+	border-top-left-radius:3px;
+}
+table tr:first-child th:last-child{
+	-moz-border-radius-topright:3px;
+	-webkit-border-top-right-radius:3px;
+	border-top-right-radius:3px;
+}
+table tr{
+	text-align: center;
+	padding-left:20px;
+}
+table tr td:first-child{
+	text-align: left;
+	padding-left:20px;
+	border-left: 0;
+}
+table tr td {
+	padding:18px;
+	border-top: 1px solid #ffffff;
+	border-bottom:1px solid #e0e0e0;
+	border-left: 1px solid #e0e0e0;
+	
+	background: #fafafa;
+	background: -webkit-gradient(linear, left top, left bottom, from(#fbfbfb), to(#fafafa));
+	background: -moz-linear-gradient(top,  #fbfbfb,  #fafafa);
+}
+table tr.even td{
+	background: #f6f6f6;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f8f8f8), to(#f6f6f6));
+	background: -moz-linear-gradient(top,  #f8f8f8,  #f6f6f6);
+}
+table tr:last-child td{
+	border-bottom:0;
+}
+table tr:last-child td:first-child{
+	-moz-border-radius-bottomleft:3px;
+	-webkit-border-bottom-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+table tr:last-child td:last-child{
+	-moz-border-radius-bottomright:3px;
+	-webkit-border-bottom-right-radius:3px;
+	border-bottom-right-radius:3px;
+}
+table tr:hover td{
+	background: #f2f2f2;
+	background: -webkit-gradient(linear, left top, left bottom, from(#f2f2f2), to(#f0f0f0));
+	background: -moz-linear-gradient(top,  #f2f2f2,  #f0f0f0);	
+}
+

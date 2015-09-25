@@ -13,6 +13,10 @@
                     },
                     
                     "analyzer": {
+					"name_analyzer" : {
+					    "tokenizer" : "standard",
+					     "filter" : ["standard", "lowercase"]
+                       },
                         "analyzer_eng_v": {
                             "type": "custom",
                             "tokenizer": "standard",
@@ -24,10 +28,10 @@
 				"properties" : {
 					"name" : {
 						"type": "string",
-						"index": "not_analyzed"},
+						"analyzer": "name_analyzer"},
 					"address" : {
 						"type": "string",
-						"analyzer": "analyzer_eng_v"},
+						"analyzer": "name_analyzer"},
 					"activity_types": {
 						"type": "string",
 						"index": "not_analyzed"},

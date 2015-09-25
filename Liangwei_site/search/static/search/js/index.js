@@ -40,6 +40,19 @@ function sendPost(sports_type){
             csrfmiddlewaretoken:'{{ csrf_token }}'
             });
         });*/
+        var geo = document.getElementById("geolocation");
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+             alert("Geolocation is not supported by this browser.");
+        }
+
+        function showPosition(position) {
+            geo.innerHTML = "Latitude: " + position.coords.latitude + "<br>Longitude: " + position.coords.longitude;
+            //geo.value = {"latitude": position.coords.latitude, "longitude": position.coords.longitude};
+            geo.value = [position.coords.latitude, position.coords.longitude];
+            console.log("here");
+        }
 
         function csrfSafeMethod(method) {
             // these HTTP methods do not require CSRF protection
@@ -52,6 +65,10 @@ function sendPost(sports_type){
                     xhr.setRequestHeader("X-CSRFToken", csrftoken);
                 }
             }
+        });
+
+        $(".even td a").click(function (){
+            window.location.href = $(this).text();
         });
 
         $(".dropdown img.flag").addClass("flagvisibility");

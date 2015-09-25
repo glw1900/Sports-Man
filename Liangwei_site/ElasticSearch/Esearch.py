@@ -24,7 +24,7 @@ class ES_query(object):
 
     #bulk load the data
     def bulk_loading(self):
-        with open(r'onthesnowplace.json','r') as j:
+        with open(r'alldata.json','r') as j:
             json_text = json.load(j)
         bulk_file = []
         action = { "index": { "_index": "i_sportsman", "_type": "stadium" }}
@@ -45,19 +45,26 @@ class ES_query(object):
             "filtered" : {
                 "query": {
                         "bool" : {
-                            "must": [{"match": {"activity_types": type}}],
+                            "must": {"match": {"activity_types": type}},
                             #"should": {"match": {"text" : string2} },
                             "boost" : 1.0}},
                 "filter" : {
                     "geo_distance" : {
-                        "distance" : "100km",
+                        "distance" : "30km",
                         "geo_location" : {
                             "lat" : lat,
                             "lon" : lon
-                        }
-                    }}
-            }
-        }}
+                        }}}}},
+        "sort": {
+            "_geo_distance": {
+                "geo_location": {
+                    "lat": lat,
+                    "lon": lon},
+            "order": "dsc",
+            "unit": "km",
+            "distance_type": "plane" }
+        }
+    }
 
         res = self.es.search(index = "i_sportsman", doc_type = "stadium", body = query_body,size = 10000)
         self.prints(res)
@@ -76,11 +83,12 @@ class ES_query(object):
             print '\n'
             print 'name: ' + hits[i]["_source"]['name']
             stadium = hits[i]["_source"]
-            print stadium
+            #print stadium
 
 
 if __name__ == "__main__":
     x =  ES_query()
-    x.q_nl('ski places with more than 100 trails within 150 miles')
     x.bulk_loading()
-    q_addr = x.q_mwf('MA','Ski',42.3688784,-71.2467742)
+   # x.q_nl('swimming pool within 2 miles',(42.3688784,-71.2467742))
+   
+    q_addr = x.q_mwf('swim',42.3688784,-71.2467742)
